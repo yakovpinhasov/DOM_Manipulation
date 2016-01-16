@@ -1,0 +1,45 @@
+
+<!-- Date validation The right format fot date is:##/##/####-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Include CSS File Here -->
+    <link rel="stylesheet" type="text/css" href="inputvalidation.css">
+    <!--script for date validation--> 
+    <script type="text/javascript">
+    /*function that checks if the formate of the date is right*/
+        function dateValidation()
+        {
+            var Exp = new RegExp("([0-9]{2})\/([0-9]{2})\/([0-9]{4})$");/* regular experssion for date formate*/
+            if(Exp.test(document.frm.date.value))
+            {
+                document.getElementById("result").innerHTML="Date Valid";
+            }
+            else{
+                    document.getElementById("result").innerHTML="Date not Valid";
+                 }
+        }
+    </script> <!-- end of script-->
+</head>
+<body>
+    <header>
+            <nav>
+                <!-- links for the other assigments-->
+                <ul>
+                    <a href="inputvalidation.html">Username And Password Validation</a>
+                    <a href="letter.html">Key Identifier</a>
+                </ul>
+            </nav>
+    </header>
+    <div class="container">
+        <h1 id = "result" style = "text-align:center">PLEASE ENTER DATE TO CHECK FORMAT</h1>
+        <form name="frm" style="margin:left">
+            <input type="text" name="date"><span id ="result"></span>
+            <input type="button" onclick="dateValidation()" value="Press to Check if Valid"/>
+        </form>
+    </div><!--end of div container-->
+</body>
+</html>
+
